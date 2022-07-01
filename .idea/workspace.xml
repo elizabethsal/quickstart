@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="502bc3f3-1b38-4a1c-b7ad-3e208ae1b1d7" name="Changes" comment="Автоматизация двух тест кейсов, логирования и заказ товара.">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TriangleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/logback.xml" afterDir="false" />
+    <list default="true" id="502bc3f3-1b38-4a1c-b7ad-3e208ae1b1d7" name="Changes" comment="Refactored triangleArea.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/SimpleCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SumDoubleValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SimpleCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SumDoubleValuesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,20 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/lizbetrh/IdeaProjects/quickstart/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lizbetrh/IdeaProjects/quickstart/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -63,7 +66,7 @@
       <command value="mvn site surefire-report:report" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TriangleTest">
+  <component name="RunManager" selected="JUnit.SimpleCalculatorTest">
     <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Triangle" />
       <module name="quickstart" />
@@ -71,27 +74,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Triangle" />
-      <module name="quickstart" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TriangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="quickstart" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TriangleTest" />
+      <option name="MAIN_CLASS_NAME" value="SimpleCalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TriangleTest.negativeTriangleTestReturnArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SumDoubleValuesTest.equalsValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="quickstart" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TriangleTest" />
-      <option name="METHOD_NAME" value="negativeTriangleTestReturnArgumentException" />
+      <option name="MAIN_CLASS_NAME" value="SumDoubleValuesTest" />
+      <option name="METHOD_NAME" value="equalsValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SumDoubleValuesTest.noneNullValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quickstart" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SumDoubleValuesTest" />
+      <option name="METHOD_NAME" value="noneNullValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SumDoubleValuesTest.notSameValuesFunction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quickstart" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SumDoubleValuesTest" />
+      <option name="METHOD_NAME" value="notSameValuesFunction" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SumDoubleValuesTest.trueCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quickstart" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SumDoubleValuesTest" />
+      <option name="METHOD_NAME" value="trueCondition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,10 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TriangleTest" />
-        <item itemvalue="JUnit.TriangleTest.negativeTriangleTestReturnArgumentException" />
-        <item itemvalue="Application.Triangle" />
-        <item itemvalue="Application.Triangle" />
+        <item itemvalue="JUnit.SimpleCalculatorTest" />
+        <item itemvalue="JUnit.SumDoubleValuesTest.notSameValuesFunction" />
+        <item itemvalue="JUnit.SumDoubleValuesTest.trueCondition" />
+        <item itemvalue="JUnit.SumDoubleValuesTest.noneNullValues" />
+        <item itemvalue="JUnit.SumDoubleValuesTest.equalsValues" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +149,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656084067776</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create test for Triangle function. Create report generation.">
+      <created>1656595430833</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656595430833</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactored triangleArea.">
+      <created>1656612186461</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656612186461</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactored triangleArea.">
+      <created>1656612225249</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656612225249</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,7 +187,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create project with maven-quickstart-archetype." />
     <MESSAGE value="Автоматизация двух тест кейсов, логирования и заказ товара." />
-    <option name="LAST_COMMIT_MESSAGE" value="Автоматизация двух тест кейсов, логирования и заказ товара." />
+    <MESSAGE value="Create test for Triangle function." />
+    <MESSAGE value="Create test for Triangle function. Create report generation." />
+    <MESSAGE value="Refactored triangleArea." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored triangleArea." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -20,7 +20,7 @@ public class Main {
         WebElement username = (new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='user-name']")));
         driver.findElement(By.xpath("//input[@id='user-name']"));
-       // WebElement username = driver.findElement(By.xpath("//input[@id='user-name']"));
+        // WebElement username = driver.findElement(By.xpath("//input[@id='user-name']"));
         driver.findElement(By.xpath("//input[@id='password']"));
         WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
         username.sendKeys("standard_user");
@@ -44,8 +44,7 @@ public class Main {
         backToProducts.click();
         WebElement menuBtn = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
         menuBtn.click();
-
-
+        driver.quit();
 
         // Не совсем понимаю как работает кнопка на sidebar, она появляется при нажатии на батон меню и в html появляется div, так вот тест на этом моменте валится. Е
         // driver.findElement(By.xpath("///a[@id='logout_sidebar_link']")).click();
@@ -53,7 +52,6 @@ public class Main {
       /*  WebElement logOut = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
         logOut.click();
 */
-        driver.quit();
 
 
     }
