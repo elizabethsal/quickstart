@@ -1,15 +1,20 @@
 public class Triangle {
-    /*public static void main(String [] args) {
-        triangle();
-    }*/
 
-    public int triangleArea(int a, int b, int c) {
+
+    public double triangleArea(double a, double b, double c) {
+
         if (a < 0 || b < 0 || c < 0) {
             throw new IllegalArgumentException("You can't use negative variable");
 
         }
-        int halfPerimeter = (a + b + c) / 2;
-        return (int) Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
+        //По теореме неравенства треугольника: Каждая сторона треугольника меньше суммы двух других сторон.
+        if (a > b + c || b > a + c || c > a + b) {
+            throw new IllegalArgumentException("По теореме неравенства треугольника: Каждая сторона треугольника меньше суммы двух других сторон.");
+        }
+        double halfPerimeter = (a + b + c) / 2;
+        return Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
+
     }
 }
+
 
