@@ -1,3 +1,5 @@
+package lesson13_2;
+
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.platform.commons.logging.Logger;
@@ -6,6 +8,8 @@ import org.junit.platform.commons.logging.LoggerFactory;
 import static org.junit.Assert.*;
 
 public class TriangleTest {
+
+    //Домашка 13 пункт 2
 
     private static Logger logger = LoggerFactory.getLogger(TriangleTest.class);
 

@@ -1,3 +1,6 @@
+package lesson13_3;
+
+import lesson13_3.SumDoubleValues;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -5,6 +8,8 @@ import static org.junit.Assert.*;
 
 
 public class SumDoubleValuesTest {
+
+    //Домашка 13 пункт 3
 
     @Test
     @DisplayName("Verify the not same values")

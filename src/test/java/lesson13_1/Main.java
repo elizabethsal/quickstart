@@ -1,3 +1,5 @@
+package lesson13_1;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +12,8 @@ import java.time.Duration;
 
 public class Main {
 
+
+    //Домашка 13 с ассертами(пункт 1)
     @Test
     public static void main(String[] args) {
         System.setProperty(
@@ -17,10 +21,12 @@ public class Main {
         );
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
+
+
         WebElement username = (new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='user-name']")));
         driver.findElement(By.xpath("//input[@id='user-name']"));
-        // WebElement username = driver.findElement(By.xpath("//input[@id='user-name']"));
+        //еWebElement username = driver.findElement(By.xpath("//input[@id='user-name']"));
         driver.findElement(By.xpath("//input[@id='password']"));
         WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
         username.sendKeys("standard_user");
@@ -46,21 +52,8 @@ public class Main {
         menuBtn.click();
         driver.quit();
 
-        // Не совсем понимаю как работает кнопка на sidebar, она появляется при нажатии на батон меню и в html появляется div, так вот тест на этом моменте валится. Е
-        // driver.findElement(By.xpath("///a[@id='logout_sidebar_link']")).click();
-
-      /*  WebElement logOut = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
-        logOut.click();
-*/
-
 
     }
-//Попытки структурировать код)
-   /* public class LoginPage{
-        By usernameLocator = By.xpath("//input[@id='user-name']");
-        By passwordLocator = By.xpath("//input[@id='password']");
-        By loginButtonLocator = By.xpath("/input[@class='submit-button btn_action']");
-    }*/
 
 
 }

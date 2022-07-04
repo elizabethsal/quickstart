@@ -1,3 +1,5 @@
+package lesson13_3;
+
 public class SumDoubleValues {
 
     /*

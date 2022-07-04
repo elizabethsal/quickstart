@@ -1,5 +1,6 @@
-public class Triangle {
+package lesson13_2;
 
+public class Triangle {
 
     public double triangleArea(double a, double b, double c) {
 
