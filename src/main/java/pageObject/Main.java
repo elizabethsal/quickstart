@@ -1,7 +1,11 @@
-import org.junit.Test;
+package pageObject;
+
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pageObject.LoginPage;
+
+
+
 
 public class Main {
 
@@ -9,12 +13,9 @@ public class Main {
     private static final String PASSWORD = "secret_sauce";
 
 
-    @Test
     public static void main(String[] args) {
-        System.setProperty(
-                "webdriver.chrome.driver", "src/main/resources/chromedriver"
-        );
-        WebDriver driver = new ChromeDriver();
+
+        WebDriver driver = WebDriverManager.chromedriver().create();
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
         new LoginPage(driver)
@@ -32,5 +33,8 @@ public class Main {
                 .clickBackToProductsButton();
         driver.quit();
     }
+
+
+
 }
 

@@ -1,21 +1,25 @@
 package pageObject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class OverviewPage {
 
     private final WebDriver driver;
-    private static final By buttonFinishLocator = By.xpath("//button[@id='finish']");
+    @FindBy(id="finish")
+    private WebElement buttonFinish;
 
     public OverviewPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
         if (!"https://www.saucedemo.com/checkout-step-two.html".equals(driver.getCurrentUrl())) {
             throw new IllegalStateException("This is not the Overview page");
         }
     }
     public CompletePage clickFinishButton() {
-        driver.findElement(buttonFinishLocator).click();
+        buttonFinish.click();
         return new CompletePage(driver);
     }
 }
