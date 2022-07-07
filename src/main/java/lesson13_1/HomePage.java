@@ -1,4 +1,4 @@
-package pageObject;
+package lesson13_1;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +9,10 @@ public class HomePage {
 
     @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
     private WebElement item;
-   @FindBy(id="shopping_cart_container")
+    @FindBy(id = "shopping_cart_container")
     private WebElement shoppingCart;
-   @FindBy(id = "checkout")
-   private WebElement buttonCheckout;
+    @FindBy(id = "checkout")
+    private WebElement buttonCheckout;
     private final WebDriver driver;
 
     public HomePage(WebDriver driver) {

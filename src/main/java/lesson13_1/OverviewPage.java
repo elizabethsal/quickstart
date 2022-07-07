@@ -1,4 +1,4 @@
-package pageObject;
+package lesson13_1;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class OverviewPage {
 
     private final WebDriver driver;
-    @FindBy(id="finish")
+    @FindBy(id = "finish")
     private WebElement buttonFinish;
 
     public OverviewPage(WebDriver driver) {
@@ -18,6 +18,7 @@ public class OverviewPage {
             throw new IllegalStateException("This is not the Overview page");
         }
     }
+
     public CompletePage clickFinishButton() {
         buttonFinish.click();
         return new CompletePage(driver);

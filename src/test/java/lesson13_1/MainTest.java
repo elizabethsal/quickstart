@@ -1,4 +1,4 @@
-package pageObject;
+package lesson13_1;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -28,6 +28,9 @@ public class MainTest {
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
         LoginPage loginPage = new LoginPage(driver);
+        WebElement logo = driver.findElement(By.xpath("//div[@class='bot_column']"));
+        assertEquals(true, logo.isDisplayed());
+        System.out.println("Logo is displayed");
         loginPage.typeUsername("ferf")
                 .typePassword("refwr");
         loginPage.loginButton.click();
@@ -47,6 +50,8 @@ public class MainTest {
 
         }
         driver.quit();
+
+
     }
 
 

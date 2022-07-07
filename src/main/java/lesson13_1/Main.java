@@ -1,10 +1,8 @@
-package pageObject;
+package lesson13_1;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-
-
 
 
 public class Main {
@@ -33,7 +31,6 @@ public class Main {
                 .clickBackToProductsButton();
         driver.quit();
     }
-
 
 
 }
