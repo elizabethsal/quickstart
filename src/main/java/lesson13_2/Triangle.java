@@ -2,7 +2,7 @@ package lesson13_2;
 
 public class Triangle {
 
-    public double triangleArea(double a, double b, double c) {
+    public int triangleArea(double a, double b, double c) {
 
         if (a < 0 || b < 0 || c < 0) {
             throw new IllegalArgumentException("You can't use negative variable");
@@ -13,7 +13,7 @@ public class Triangle {
             throw new IllegalArgumentException("По теореме неравенства треугольника: Каждая сторона треугольника меньше суммы двух других сторон.");
         }
         double halfPerimeter = (a + b + c) / 2;
-        return Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
+        return (int) Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
 
     }
 }
