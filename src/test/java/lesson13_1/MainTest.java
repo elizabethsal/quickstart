@@ -2,9 +2,13 @@ package lesson13_1;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +18,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+@Epic("Saucedemo Test Epic")
+@Feature("Sigh in and check purchase")
 public class MainTest {
 
 
@@ -24,7 +29,7 @@ public class MainTest {
     WebDriver driver = WebDriverManager.chromedriver().create();
 
 
-    @Before
+    @BeforeEach
     public void startBrowser() {
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
@@ -32,6 +37,8 @@ public class MainTest {
 
 
     @Test
+    @Story("Check login with incorrect data")
+    @Description("Should assert the login is correct, if no, return error message")
     public void checkLoginWithIncorrectData() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.typeUsername("f4ref")
@@ -42,12 +49,16 @@ public class MainTest {
     }
 
     @Test
+    @Story("Check logo is displayed")
+    @Description("Should assert logo is displayed")
     public void checkLogoIsDisplayed() {
         WebElement logo = driver.findElement(By.xpath("//div[@class='bot_column']"));
         assertEquals(true, logo.isDisplayed(), "Logo isn't displayed");
     }
 
     @Test
+    @Story("Check successful purchase")
+    @Description("Should assert purchase is successful")
     public void checkSuccessfulPurchase() {
         new HomePage(driver).clickItem()
                 .clickShoppingCartContainer()
@@ -57,12 +68,12 @@ public class MainTest {
                 .writePostalCode(5446)
                 .clickContinue()
                 .clickFinishButton();
-        CompletePage completePage = new CompletePage(driver);
+        new CompletePage(driver);
         assertEquals("https://www.saucedemo.com/checkout-complete.html", new ChromeDriver().getCurrentUrl());
 
     }
 
-    @After
+    @AfterEach
     public void close() {
         driver.quit();
     }
