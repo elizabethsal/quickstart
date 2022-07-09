@@ -1,17 +1,22 @@
 package lesson13_3;
 
 
-import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
-
+@Epic("Sum double values Test Epic")
+@Feature("Verify double values")
 public class SumDoublesValuesTest {
 
 
     @Test
-    @DisplayName("Verify the not same values")
+    @Story("Check not same values")
+    @Description("Should assert that values are not the same")
     public void notSameValuesFunction() {
         SumDoublesValues aSame = new SumDoublesValues();
         SumDoublesValues bSame = new SumDoublesValues();
@@ -19,13 +24,15 @@ public class SumDoublesValuesTest {
     }
 
     @Test
-    @DisplayName("Verify that a certain condition is true or false")
+    @Story("Check true condition")
+    @Description("Check that value a greater than b")
     public void trueCondition() {
         assertTrue("a is greater then b", 5 > 4);
     }
 
     @Test
-    @DisplayName("Verify that none of the value is null")
+    @Story("Check not null")
+    @Description("Check that values not null")
     public void noneNullValues() {
         SumDoublesValues a = new SumDoublesValues();
         SumDoublesValues b = new SumDoublesValues();
@@ -34,7 +41,8 @@ public class SumDoublesValuesTest {
     }
 
     @Test
-    @DisplayName("Verify that the values are equal to each other")
+    @Story("Check true condition")
+    @Description("Check that value a is equal b")
     public void equalsValues() {
         int aEquals = 5;
         int bEquals = 5;
