@@ -1,9 +1,6 @@
 package lesson13_3;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +14,8 @@ public class SimpleCalculatorTest {
 
     @Test
     @Story("Check simple addition operation")
-    @Description("Should check 2 + 2, return 4")
+    @Description("Check 2+2 return right sum")
+    @Severity(SeverityLevel.NORMAL)
     public void twoPlusTwoEqualsFour() {
         SimpleCalculator calculator = new SimpleCalculator();
         assertTrue(calculator.add(2, 2) == 4);
@@ -25,7 +23,8 @@ public class SimpleCalculatorTest {
 
     @Test
     @Story("Check simple addition operation")
-    @Description("Should check 4 + 7, return 11")
+    @Description("Check 4 + 7 return 11")
+    @Severity(SeverityLevel.NORMAL)
     public void fourPlusSevenEqualsEleven() {
         SimpleCalculator elevenEq = new SimpleCalculator();
         assertEquals(11, elevenEq.add(4, 7));

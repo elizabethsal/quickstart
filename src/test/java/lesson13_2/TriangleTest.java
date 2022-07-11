@@ -1,9 +1,6 @@
 package lesson13_2;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +14,8 @@ public class TriangleTest {
 
     @Test
     @Story("Trying to return wrong square")
-    @Description("should assert non-equals")
+    @Description("Check for incorrect area return")
+    @Severity(SeverityLevel.NORMAL)
     public void triangleTestReturnWrongSquare() {
         Triangle triangleNegative = new Triangle();
         Assertions.assertNotEquals(89, triangleNegative.triangleArea(9, 8, 9));
@@ -25,7 +23,8 @@ public class TriangleTest {
 
     @Test
     @Story("eachSideGreaterTheSumSides")
-    @Description("should throw IllegalArgumentException")
+    @Description("Check IllegalArgumentException")
+    @Severity(SeverityLevel.NORMAL)
     public void eachSideGreaterTheSumSides() {
         Triangle triangleArea = new Triangle();
         assertThrows(IllegalArgumentException.class,
@@ -34,7 +33,8 @@ public class TriangleTest {
 
     @Test
     @Story("negativeTriangleTestReturnArgumentException")
-    @Description("should throw IllegalArgumentException")
+    @Description("Check IllegalArgumentException with negative value")
+    @Severity(SeverityLevel.NORMAL)
     public void negativeTriangleTestReturnArgumentException() {
         Triangle triangleSq = new Triangle();
         assertThrows(IllegalArgumentException.class,
@@ -50,7 +50,8 @@ public class TriangleTest {
 
     @Test
     @Story("triangleTestReturnRightSquare")
-    @Description("should assert equal field int value")
+    @Description("Check right area")
+    @Severity(SeverityLevel.CRITICAL)
     public void triangleTestReturnRightSquare() {
         Triangle triangleSq1 = new Triangle();
         Assertions.assertEquals(59, triangleSq1.triangleArea(8, 15, 16));

@@ -92,15 +92,16 @@
                         </property>
                     </properties>
                     <includes>
-                        <include>**/tests/**.java</include>
+                        <include>**/**.java</include>
                     </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>${project.basedir}/allure-results</value>
+                            <value>${project.build.directory}/allure-results</value>
                         </property>
                         <property>
                             <name>junit.jupiter.extensions.autodetection.enabled</name>

@@ -2,17 +2,13 @@ package lesson13_1;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
@@ -38,11 +34,10 @@ public class MainTest {
 
     @Test
     @Story("Check login with incorrect data")
-    @Description("Should assert the login is correct, if no, return error message")
+    @Description("Check login with correct data")
+    @Severity(SeverityLevel.NORMAL)
     public void checkLoginWithIncorrectData() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.typeUsername("f4ref")
-                .typePassword("href");
+        LoginPage loginPage = login("f4ref", "ugode");
         loginPage.loginButton.click();
         List<WebElement> errorMessageContainer = driver.findElements(By.xpath("//h3[contains(text(), 'Epic sadface: Username and password do not match any user in this service')]"));
         assertEquals(errorMessage, errorMessageContainer.get(0).getText());
@@ -50,21 +45,26 @@ public class MainTest {
 
     @Test
     @Story("Check logo is displayed")
-    @Description("Should assert logo is displayed")
+    @Description("Check logo displayed")
+    @Severity(SeverityLevel.TRIVIAL)
     public void checkLogoIsDisplayed() {
         WebElement logo = driver.findElement(By.xpath("//div[@class='bot_column']"));
         assertEquals(true, logo.isDisplayed(), "Logo isn't displayed");
     }
 
+    private LoginPage login(String login, String password) {
+        return new LoginPage(driver)
+                .typeUsername(login)
+                .typePassword(password);
+    }
+
     @Test
     @Story("Check successful purchase")
-    @Description("Should assert purchase is successful")
+    @Description("Check successful purchase")
+    @Severity(SeverityLevel.NORMAL)
     public void checkSuccessfulPurchase() {
-        new LoginPage(driver)
-                .typeUsername(LOGIN)
-                .typePassword(PASSWORD)
-                .submitLogin();
-           new HomePage(driver).clickItem()
+        login(LOGIN, PASSWORD).submitLogin();
+        new HomePage(driver).clickItem()
                 .clickShoppingCartContainer()
                 .clickCheckout()
                 .writeFirstName("Gfok")
