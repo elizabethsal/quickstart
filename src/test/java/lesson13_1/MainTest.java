@@ -60,7 +60,11 @@ public class MainTest {
     @Story("Check successful purchase")
     @Description("Should assert purchase is successful")
     public void checkSuccessfulPurchase() {
-        new HomePage(driver).clickItem()
+        new LoginPage(driver)
+                .typeUsername(LOGIN)
+                .typePassword(PASSWORD)
+                .submitLogin();
+           new HomePage(driver).clickItem()
                 .clickShoppingCartContainer()
                 .clickCheckout()
                 .writeFirstName("Gfok")
@@ -68,8 +72,7 @@ public class MainTest {
                 .writePostalCode(5446)
                 .clickContinue()
                 .clickFinishButton();
-        new CompletePage(driver);
-        assertEquals("https://www.saucedemo.com/checkout-complete.html", new ChromeDriver().getCurrentUrl());
+        assertEquals("https://www.saucedemo.com/checkout-complete.html", driver.getCurrentUrl());
 
     }
 
